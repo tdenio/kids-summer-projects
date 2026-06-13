@@ -26,10 +26,10 @@
 
   <header class="head compact">
     <p class="eyebrow">Weekly Logbook</p>
-    <h1 class="small">Week of <span class="fill" style="min-width:200px;"></span></h1>
+    <h1 class="small">Week of <span class="fill" contenteditable="true" spellcheck="false" style="min-width:200px;"></span></h1>
     <div class="namebar">
-      <span><b>Explorer:</b> <span class="fill"></span></span>
-      <span><b>This week's goal:</b> <span class="fill" style="min-width:220px;"></span></span>
+      <span><b>Explorer:</b> <span class="fill" contenteditable="true" spellcheck="false"></span></span>
+      <span><b>This week's goal:</b> <span class="fill" contenteditable="true" spellcheck="false" style="min-width:220px;"></span></span>
     </div>
   </header>
 
@@ -45,10 +45,10 @@
           </tr>
         </thead>
         <tbody>
-          <tr><th>Build Block 1<small>9:15 &middot; 1-on-1</small></th><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><th>Skills Lab<small>11:00</small></th><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><th>Make Block 2<small>1:30 &middot; 1-on-1</small></th><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><th>Free Choice<small>3:00 &middot; kid-led</small></th><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><th>Build Block 1<small>9:15 &middot; 1-on-1</small></th><td contenteditable="true" spellcheck="false"></td><td contenteditable="true" spellcheck="false"></td><td contenteditable="true" spellcheck="false"></td><td contenteditable="true" spellcheck="false"></td><td contenteditable="true" spellcheck="false"></td></tr>
+          <tr><th>Skills Lab<small>11:00</small></th><td contenteditable="true" spellcheck="false"></td><td contenteditable="true" spellcheck="false"></td><td contenteditable="true" spellcheck="false"></td><td contenteditable="true" spellcheck="false"></td><td contenteditable="true" spellcheck="false"></td></tr>
+          <tr><th>Make Block 2<small>1:30 &middot; 1-on-1</small></th><td contenteditable="true" spellcheck="false"></td><td contenteditable="true" spellcheck="false"></td><td contenteditable="true" spellcheck="false"></td><td contenteditable="true" spellcheck="false"></td><td contenteditable="true" spellcheck="false"></td></tr>
+          <tr><th>Free Choice<small>3:00 &middot; kid-led</small></th><td contenteditable="true" spellcheck="false"></td><td contenteditable="true" spellcheck="false"></td><td contenteditable="true" spellcheck="false"></td><td contenteditable="true" spellcheck="false"></td><td contenteditable="true" spellcheck="false"></td></tr>
           <tr class="bulbrow">
             <th>Bulb earned?</th>
             <td class="bulbcell"><span class="checkbox"></span></td>
@@ -68,19 +68,44 @@
     <div class="logbook">
       <div class="logcard">
         <h4>What we built</h4>
-        <div class="writeline"></div><div class="writeline"></div><div class="writeline"></div>
+        <textarea class="logtext" spellcheck="false" placeholder="Write here…"></textarea>
       </div>
       <div class="logcard">
         <h4>Best moment</h4>
-        <div class="writeline"></div><div class="writeline"></div><div class="writeline"></div>
+        <textarea class="logtext" spellcheck="false" placeholder="Write here…"></textarea>
       </div>
       <div class="logcard">
         <h4>Next week we want to try</h4>
-        <div class="writeline"></div><div class="writeline"></div><div class="writeline"></div>
+        <textarea class="logtext" spellcheck="false" placeholder="Write here…"></textarea>
       </div>
     </div>
   </section>
 
 </div>
+<script>
+(function(){
+  function save(){
+    var d={};
+    document.querySelectorAll('[contenteditable]').forEach(function(el,i){d['ce'+i]=el.textContent;});
+    document.querySelectorAll('.logtext').forEach(function(el,i){d['ta'+i]=el.value;});
+    document.querySelectorAll('.checkbox').forEach(function(el,i){d['cb'+i]=el.classList.contains('checked');});
+    try{localStorage.setItem('maker-tracker',JSON.stringify(d));}catch(e){}
+  }
+  function load(){
+    var raw; try{raw=localStorage.getItem('maker-tracker');}catch(e){}
+    if(!raw)return;
+    var d=JSON.parse(raw);
+    document.querySelectorAll('[contenteditable]').forEach(function(el,i){if(d['ce'+i]!=null)el.textContent=d['ce'+i];});
+    document.querySelectorAll('.logtext').forEach(function(el,i){if(d['ta'+i]!=null)el.value=d['ta'+i];});
+    document.querySelectorAll('.checkbox').forEach(function(el,i){if(d['cb'+i])el.classList.add('checked');});
+  }
+  document.querySelectorAll('[contenteditable]').forEach(function(el){el.addEventListener('input',save);});
+  document.querySelectorAll('.logtext').forEach(function(el){el.addEventListener('input',save);});
+  document.querySelectorAll('.checkbox').forEach(function(el){
+    el.addEventListener('click',function(){el.classList.toggle('checked');save();});
+  });
+  load();
+})();
+</script>
 </body>
 </html>

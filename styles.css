@@ -186,13 +186,23 @@ a{color:var(--green);text-decoration:none;border-bottom:1px solid #BBD8C9;}
 .weekgrid .bulbrow td,.weekgrid .bulbrow th{height:auto;}
 .weekgrid .bulbrow th{background:var(--ink);color:#F1F0E8;}
 .weekgrid .bulbcell{text-align:center;padding:10px 4px;}
-.weekgrid .checkbox{display:inline-block;width:22px;height:22px;border:2px solid var(--ink-soft);border-radius:6px;}
+.weekgrid .checkbox{display:inline-block;width:22px;height:22px;border:2px solid var(--ink-soft);border-radius:6px;cursor:pointer;position:relative;transition:background .12s,border-color .12s;}
+.weekgrid .checkbox.checked{background:var(--amber);border-color:var(--amber);}
+.weekgrid .checkbox.checked::after{content:"✓";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:#fff;font-size:13px;line-height:1;}
+
+.fill[contenteditable]{cursor:text;outline:none;}
+.fill[contenteditable]:focus{border-bottom-color:var(--amber);border-bottom-style:solid;}
+
+td[contenteditable]{vertical-align:top;padding:8px 10px;font-size:13px;cursor:text;outline:none;}
+td[contenteditable]:focus{background:#F7F6EE;box-shadow:inset 0 0 0 2px var(--amber);}
 
 .logbook{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;}
 .logcard{background:var(--card);border:1px solid var(--hair);border-radius:11px;padding:16px 17px;}
 .logcard h4{font-family:var(--display);font-size:15px;color:var(--ink);margin:0 0 12px;}
 .logcard .writeline{border-bottom:1.5px dashed var(--hair);height:26px;}
 .logcard .writeline + .writeline{margin-top:14px;}
+.logcard .logtext{width:100%;min-height:84px;border:none;outline:none;resize:none;background:transparent;font-family:var(--body);font-size:14px;color:var(--text);line-height:1.9;padding:0;display:block;}
+.logcard .logtext::placeholder{color:var(--hair);}
 
 @media (max-width:620px){
   .reward .inner{grid-template-columns:1fr;}
