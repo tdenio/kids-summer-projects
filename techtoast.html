@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maker Summer — Tech Toast</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="inner">
+    <a class="brand" href="index.html"><span class="spark">&#9889;</span> Maker Summer</a>
+    <div class="links">
+      <a href="index.html">The Plan</a>
+      <a href="tracker.html">Tracker</a>
+      <a href="techtoast.html" class="active">Tech Toast</a>
+      <a href="documentary.html">Documentary</a>
+      <a href="treasurehunt.html">Treasure Hunt</a>
+      <a href="cabin.html">Cabin</a>
+    </div>
+  </div>
+</nav>
+
+<div class="sheet">
+
+  <header class="head">
+    <p class="eyebrow">Arduino Course &middot; 25 Weeks &middot; Tech Toast Academy</p>
+    <h1>Tech Toast
+      <span class="sub">Build real electronic projects, week by week &mdash; from your first button and LED all the way to an RFID door lock.</span>
+    </h1>
+    <div class="namebar">
+      <span><b>Builder:</b> <span class="fill" contenteditable="true" spellcheck="false" data-key="tt-name"></span></span>
+      <span><b>Started:</b> <span class="fill" contenteditable="true" spellcheck="false" data-key="tt-started"></span></span>
+    </div>
+  </header>
+
+  <!-- PROGRESS -->
+  <section>
+    <p class="label"><span class="num">01</span> Your progress</p>
+    <div class="tt-progress-wrap">
+      <div class="tt-progress-info">
+        <span class="tt-progress-big" id="tt-count">0</span>
+        <span class="tt-progress-of">of 25 weeks completed</span>
+      </div>
+      <div class="tt-bar-bg">
+        <div class="tt-bar-fill" id="tt-bar"></div>
+      </div>
+      <div class="tt-bulbs" id="tt-bulbs">
+        <!-- 25 dots injected by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- SETUP -->
+  <section>
+    <p class="label"><span class="num">02</span> One-time setup</p>
+    <h2>Get the Arduino IDE running</h2>
+    <p class="lede">Do these five steps once, before Week 1. You only need to do this setup once &mdash; after that, the software is ready every time you sit down.</p>
+    <div class="tt-setup">
+
+      <label class="tt-step">
+        <span class="tt-chkbox" data-key="setup-0"></span>
+        <span class="tt-step-body">
+          <b>Download the Arduino IDE</b>
+          <span>Go to <code>arduino.cc/en/software</code> and install the app on your computer (Windows or Mac).</span>
+        </span>
+      </label>
+
+      <label class="tt-step">
+        <span class="tt-chkbox" data-key="setup-1"></span>
+        <span class="tt-step-body">
+          <b>Plug in your Arduino</b>
+          <span>Connect it to your computer with the USB cable. The green power light on the Arduino should turn on.</span>
+        </span>
+      </label>
+
+      <label class="tt-step">
+        <span class="tt-chkbox" data-key="setup-2"></span>
+        <span class="tt-step-body">
+          <b>Select your board</b>
+          <span>In the Arduino IDE, go to <code>Tools &rarr; Board &rarr; Arduino AVR Boards &rarr; Arduino Uno</code>.</span>
+        </span>
+      </label>
+
+      <label class="tt-step">
+        <span class="tt-chkbox" data-key="setup-3"></span>
+        <span class="tt-step-body">
+          <b>Select your port</b>
+          <span>Go to <code>Tools &rarr; Port</code> and pick the COM port that appeared when you plugged in the Arduino. Trick: unplug it and see which port disappears &mdash; that&rsquo;s yours. Plug back in and select it.</span>
+        </span>
+      </label>
+
+      <label class="tt-step">
+        <span class="tt-chkbox" data-key="setup-4"></span>
+        <span class="tt-step-body">
+          <b>Upload the Blink test</b>
+          <span>Go to <code>File &rarr; Examples &rarr; 01.Basics &rarr; Blink</code>. Change both <code>delay(1000)</code> values to <code>delay(100)</code>. Click the upload arrow &rarr;. The tiny orange LED near pin&nbsp;13 on the Arduino should flicker fast. If it does &mdash; you&rsquo;re ready for Week&nbsp;1!</span>
+        </span>
+      </label>
+
+    </div>
+  </section>
+
+  <!-- 25 WEEKS -->
+  <section>
+    <p class="label"><span class="num">03</span> The 25 weeks</p>
+    <h2>Build, week by week</h2>
+    <p class="lede">Check off all four steps for each week. Add notes in the field below each card. Go in order &mdash; each week builds on the one before it.</p>
+    <div class="tt-legend">
+      <span><span class="tt-chkbox tt-chkbox--sm checked" style="pointer-events:none"></span> Wired</span>
+      <span><span class="tt-chkbox tt-chkbox--sm checked" style="pointer-events:none"></span> Coded</span>
+      <span><span class="tt-chkbox tt-chkbox--sm checked" style="pointer-events:none"></span> Works</span>
+      <span><span class="tt-chkbox tt-chkbox--sm checked" style="pointer-events:none"></span> Challenged</span>
+    </div>
+    <div class="tt-grid" id="tt-weeks">
+      <!-- injected by JS -->
+    </div>
+  </section>
+
+</div>
+
+<script>
+(function(){
+
+var WEEKS = [
+  { chip:'LED',      title:'Button & LED',             desc:'Press a button, turn on a light — your very first input and output wired together.' },
+  { chip:'BUZZER',   title:'Active Buzzer',             desc:'Make noise. Wire up a buzzer and trigger it with a button press.' },
+  { chip:'BUZZER',   title:'Passive Buzzer',            desc:'Play different musical notes by changing the frequency you send the buzzer.' },
+  { chip:'SENSOR',   title:'Potentiometer',             desc:'Turn a knob and watch the value change — your first analog input from the real world.' },
+  { chip:'SENSOR',   title:'Photoresistor',             desc:'Read light levels and make your project react to how bright or dark the room is.' },
+  { chip:'LED',      title:'RGB LED',                   desc:'Mix red, green, and blue light to make any color using a single LED module.' },
+  { chip:'DISPLAY',  title:'1-Digit Display',           desc:'Show a single number on a real 7-segment LED display.' },
+  { chip:'DISPLAY',  title:'4-Digit Display',           desc:'Show a 4-digit number — build a counter that ticks up on its own.' },
+  { chip:'SENSOR',   title:'Temperature & Humidity',    desc:'Use the DHT11 module to measure real temperature and humidity in the room.' },
+  { chip:'SENSOR',   title:'Water Level Sensor',        desc:'Detect whether water is present and trigger a response when it is.' },
+  { chip:'DISPLAY',  title:'LCD Screen',                desc:'Display two rows of custom text on a real 16-character LCD panel.' },
+  { chip:'INPUT',    title:'4×4 Keypad',           desc:'Wire up a 16-button keypad and read which key is pressed.' },
+  { chip:'INPUT',    title:'Joystick',                  desc:'Move a thumbstick to send X and Y axis values to the Arduino and control an output.' },
+  { chip:'SENSOR',   title:'Sound Sensor',              desc:'Detect loud sounds with a microphone and trigger an action when noise is heard.' },
+  { chip:'CONTROL',  title:'Shift Register',            desc:'Control 8 outputs using just 3 Arduino pins — a key trick for saving pins.' },
+  { chip:'CONTROL',  title:'Relay Module',              desc:'Use the Arduino to safely switch a bigger device on and off.' },
+  { chip:'MOTOR',    title:'Stepper Motor',             desc:'Move a motor in precise steps — the same type used in printers and 3D printers.' },
+  { chip:'MOTOR',    title:'Servo Motor',               desc:'Rotate to an exact angle and hold there — this motor becomes your door lock in Week 25.' },
+  { chip:'TIME',     title:'Real-Time Clock',           desc:'Add a clock chip that keeps the time even when the Arduino is powered off.' },
+  { chip:'WIRELESS', title:'IR Remote — Part 1',   desc:'Receive signals from an infrared remote control, just like a TV remote.' },
+  { chip:'WIRELESS', title:'IR Remote — Part 2',   desc:'Use the remote to control multiple outputs and build a remote-controlled project.' },
+  { chip:'RFID',     title:'RFID — Part 1',        desc:'Read the unique ID from a card or key tag using radio waves.' },
+  { chip:'RFID',     title:'RFID — Part 2',        desc:'Store allowed IDs and compare them to what the reader scans.' },
+  { chip:'RFID',     title:'RFID — Part 3',        desc:'Add the servo lock and indicator LEDs — the door lock starts to take shape.' },
+  { chip:'FINAL',    title:'RFID Door Lock',            desc:'Final project: combine RFID reader, servo lock, LED indicators, and keypad override into a fully working door lock.' },
+];
+
+var STEPS = ['Wired', 'Coded', 'Works', 'Challenged'];
+
+function el(tag, cls, text){
+  var e = document.createElement(tag);
+  if(cls) e.className = cls;
+  if(text != null) e.textContent = text;
+  return e;
+}
+
+function buildBulbs(){
+  var row = document.getElementById('tt-bulbs');
+  for(var i=0;i<25;i++){
+    var dot = el('span','tt-dot');
+    dot.dataset.week = i+1;
+    row.appendChild(dot);
+  }
+}
+
+function buildWeeks(){
+  var grid = document.getElementById('tt-weeks');
+  WEEKS.forEach(function(w, i){
+    var wk = i + 1;
+    var isFinal = wk === 25;
+    var card = el('div', 'tt-card' + (isFinal ? ' tt-card--final' : ''));
+
+    // top row
+    var top = el('div','tt-card-top');
+    top.appendChild(el('span','tt-badge','WK ' + wk));
+    top.appendChild(el('span','tt-chip' + (isFinal ? ' tt-chip--final' : ''), w.chip));
+    card.appendChild(top);
+
+    card.appendChild(el('h4', 'tt-title', w.title));
+    card.appendChild(el('p',  'tt-desc',  w.desc));
+
+    // four checkboxes
+    var checks = el('div','tt-checks');
+    STEPS.forEach(function(label, si){
+      var wrap = el('label','tt-chk-wrap');
+      var box  = el('span','tt-chkbox tt-chkbox--sm');
+      box.dataset.key = 'w' + wk + '-s' + si;
+      wrap.appendChild(box);
+      wrap.appendChild(el('span','tt-chk-label', label));
+      checks.appendChild(wrap);
+    });
+    card.appendChild(checks);
+
+    // notes
+    var ta = document.createElement('textarea');
+    ta.className = 'tt-notes';
+    ta.placeholder = 'Notes — what did you build? what was tricky? what did you try?';
+    ta.spellcheck = false;
+    ta.dataset.key = 'w' + wk + '-notes';
+    card.appendChild(ta);
+
+    grid.appendChild(card);
+  });
+}
+
+// persistence
+function save(){
+  var d = {};
+  document.querySelectorAll('[data-key]').forEach(function(node){
+    var k = node.dataset.key;
+    if(node.classList.contains('tt-chkbox')){
+      d[k] = node.classList.contains('checked');
+    } else if(node.tagName === 'TEXTAREA'){
+      d[k] = node.value;
+    } else if(node.getAttribute('contenteditable')){
+      d[k] = node.textContent;
+    }
+  });
+  try{ localStorage.setItem('techtoast-v1', JSON.stringify(d)); }catch(e){}
+}
+
+function load(){
+  var raw; try{ raw = localStorage.getItem('techtoast-v1'); }catch(e){}
+  if(!raw) return;
+  var d = JSON.parse(raw);
+  document.querySelectorAll('[data-key]').forEach(function(node){
+    var k = node.dataset.key;
+    if(d[k] === undefined) return;
+    if(node.classList.contains('tt-chkbox')){
+      if(d[k]) node.classList.add('checked');
+    } else if(node.tagName === 'TEXTAREA'){
+      node.value = d[k];
+    } else if(node.getAttribute('contenteditable')){
+      node.textContent = d[k];
+    }
+  });
+}
+
+function updateProgress(){
+  var done = 0;
+  WEEKS.forEach(function(_, i){
+    var wk = i + 1;
+    var allChecked = STEPS.every(function(_, si){
+      var box = document.querySelector('[data-key="w' + wk + '-s' + si + '"]');
+      return box && box.classList.contains('checked');
+    });
+    if(allChecked) done++;
+    var dot = document.querySelector('.tt-dot[data-week="' + wk + '"]');
+    if(dot) dot.classList.toggle('tt-dot--done', allChecked);
+  });
+  document.getElementById('tt-count').textContent = done;
+  document.getElementById('tt-bar').style.width = Math.round(done / 25 * 100) + '%';
+}
+
+function wireEvents(){
+  document.querySelectorAll('.tt-chkbox').forEach(function(box){
+    box.addEventListener('click', function(){
+      box.classList.toggle('checked');
+      save();
+      updateProgress();
+    });
+  });
+  document.querySelectorAll('textarea[data-key]').forEach(function(ta){
+    ta.addEventListener('input', save);
+  });
+  document.querySelectorAll('[contenteditable][data-key]').forEach(function(ce){
+    ce.addEventListener('input', save);
+  });
+}
+
+buildBulbs();
+buildWeeks();
+load();
+updateProgress();
+wireEvents();
+
+})();
+</script>
+</body>
+</html>

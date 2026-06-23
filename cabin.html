@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maker Summer &mdash; Cabin Design</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="inner">
+    <a class="brand" href="index.html"><span class="spark">&#9889;</span> Maker Summer</a>
+    <div class="links">
+      <a href="index.html">The Plan</a>
+      <a href="tracker.html">Tracker</a>
+      <a href="techtoast.html">Tech Toast</a>
+      <a href="documentary.html">Documentary</a>
+      <a href="treasurehunt.html">Treasure Hunt</a>
+      <a href="cabin.html" class="active">Cabin</a>
+    </div>
+  </div>
+</nav>
+
+<div class="sheet">
+
+  <header class="head">
+    <p class="eyebrow">Design Project &middot; 1 Bed / 1 Bath &middot; ~1,000 sq ft &middot; Compass + Minecraft + Revit</p>
+    <h1>Cabin Design
+      <span class="sub">Locate the site with a compass, design the floor plan, build it in Minecraft, then draft it in Revit.</span>
+    </h1>
+    <div class="namebar">
+      <span><b>Architect:</b> <span class="fill" contenteditable="true" spellcheck="false" data-key="cabin-name"></span></span>
+      <span><b>Site:</b> <span class="fill" contenteditable="true" spellcheck="false" data-key="cabin-site" style="min-width:200px;"></span></span>
+    </div>
+  </header>
+
+  <!-- 01 FLOOR PLAN BRIEF -->
+  <section>
+    <p class="label"><span class="num">01</span> The brief</p>
+    <h2>What you are designing</h2>
+    <p class="lede">This is a real cabin on a real lot next door. Treat it like a real project &mdash; every decision you make has to fit a person actually living there.</p>
+    <div class="deal">
+      <div><h3>~1,000 sq ft</h3><p>That&rsquo;s roughly a 32&thinsp;&times;&thinsp;32 foot square &mdash; a little bigger than a two-car garage. Not large, but plenty for one person.</p></div>
+      <div><h3>1 Bedroom</h3><p>At least 120 sq ft. Needs a window and a closet. Where does the morning light come from? That&rsquo;s usually the best wall for a bedroom window.</p></div>
+      <div><h3>1 Bathroom</h3><p>Minimum 40 sq ft for a toilet, sink, and small shower. Should be accessible from the bedroom without walking through the living area.</p></div>
+      <div><h3>Kitchen + Living</h3><p>The rest of the space &mdash; roughly 600&ndash;700 sq ft. Open plan works well in small cabins so the space feels bigger.</p></div>
+    </div>
+  </section>
+
+  <!-- 02 LOCATE THE SITE -->
+  <section>
+    <p class="label"><span class="num">02</span> Locate the building site</p>
+    <h2>Mark the four corners</h2>
+    <p class="lede">Use your compass and pacing to stake out the cabin footprint on the actual lot. One walking step &asymp; 2&frac12; feet. For a 32 &times; 32 ft cabin you need about 13 steps per side.</p>
+
+    <div class="cabin-setup-note">
+      <b>Before you start:</b> Pick a clear starting landmark on the lot (a fence post, a tree, a corner stake). Write it below. All four corners are measured from there or from each other in sequence.
+    </div>
+
+    <div class="hunt-field-row" style="margin:16px 0;">
+      <span class="hunt-field-label"><b>Starting landmark:</b></span>
+      <span class="fill" contenteditable="true" spellcheck="false" data-key="cabin-landmark" style="min-width:280px;"></span>
+    </div>
+
+    <div class="cabin-corners">
+
+      <div class="cabin-corner">
+        <div class="cabin-corner-num">C1</div>
+        <div class="cabin-corner-label">Corner 1</div>
+        <p class="cabin-corner-desc">From your starting landmark, walk on a bearing to reach the first corner. Mark it with a stick or flag.</p>
+        <div class="hunt-field-row"><span class="hunt-field-label">From:</span><span class="fill" contenteditable="true" spellcheck="false" data-key="cabin-c1-from" style="min-width:140px;"></span></div>
+        <div class="hunt-field-row" style="margin-top:8px;"><span class="hunt-field-label">Bearing:</span><span class="fill" contenteditable="true" spellcheck="false" data-key="cabin-c1-bearing" style="min-width:70px;"></span><span class="hunt-field-unit">deg</span><span class="hunt-field-label">Steps:</span><span class="fill" contenteditable="true" spellcheck="false" data-key="cabin-c1-steps" style="min-width:60px;"></span></div>
+      </div>
+
+      <div class="cabin-corner">
+        <div class="cabin-corner-num">C2</div>
+        <div class="cabin-corner-label">Corner 2</div>
+        <p class="cabin-corner-desc">From Corner 1, turn 90&deg; to the right and walk the cabin&rsquo;s width. This is your front wall.</p>
+        <div class="hunt-field-row"><span class="hunt-field-label">Bearing:</span><span class="fill" contenteditable="true" spellcheck="false" data-key="cabin-c2-bearing" style="min-width:70px;"></span><span class="hunt-field-unit">deg</span><span class="hunt-field-label">Steps:</span><span class="fill" contenteditable="true" spellcheck="false" data-key="cabin-c2-steps" style="min-width:60px;"></span></div>
+        <p class="cabin-corner-hint">Tip: add 90&deg; to your Corner 1 bearing. If it exceeds 360, subtract 360.</p>
+      </div>
+
+      <div class="cabin-corner">
+        <div class="cabin-corner-num">C3</div>
+        <div class="cabin-corner-label">Corner 3</div>
+        <p class="cabin-corner-desc">From Corner 2, turn 90&deg; right again and walk the cabin&rsquo;s depth. This is your side wall.</p>
+        <div class="hunt-field-row"><span class="hunt-field-label">Bearing:</span><span class="fill" contenteditable="true" spellcheck="false" data-key="cabin-c3-bearing" style="min-width:70px;"></span><span class="hunt-field-unit">deg</span><span class="hunt-field-label">Steps:</span><span class="fill" contenteditable="true" spellcheck="false" data-key="cabin-c3-steps" style="min-width:60px;"></span></div>
+        <p class="cabin-corner-hint">Same step count as Corner 2 (same width).</p>
+      </div>
+
+      <div class="cabin-corner">
+        <div class="cabin-corner-num">C4</div>
+        <div class="cabin-corner-label">Corner 4</div>
+        <p class="cabin-corner-desc">From Corner 3, turn 90&deg; right and walk back. Corner 4 should line up directly with Corner 1.</p>
+        <div class="hunt-field-row"><span class="hunt-field-label">Bearing:</span><span class="fill" contenteditable="true" spellcheck="false" data-key="cabin-c4-bearing" style="min-width:70px;"></span><span class="hunt-field-unit">deg</span><span class="hunt-field-label">Steps:</span><span class="fill" contenteditable="true" spellcheck="false" data-key="cabin-c4-steps" style="min-width:60px;"></span></div>
+        <p class="cabin-corner-hint">Same step count as Corner 1 (same depth). Check: are C4 and C1 close? If not, recheck your bearings.</p>
+      </div>
+
+    </div>
+
+    <div style="margin-top:16px;">
+      <div class="logcard">
+        <h4>Site notes</h4>
+        <textarea class="logtext" placeholder="Describe the lot. Is it flat? Sloped? What trees or features does the cabin need to work around?" data-key="cabin-site-notes" spellcheck="false"></textarea>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 FLOOR PLAN -->
+  <section>
+    <p class="label"><span class="num">03</span> Design the floor plan</p>
+    <h2>Arrange the rooms</h2>
+    <p class="lede">Before you build anything, decide where every room goes. A bad layout is hard to fix later &mdash; even in Minecraft. Sketch your ideas here first.</p>
+
+    <div class="cabin-floorplan">
+      <div class="cabin-room-card">
+        <div class="cabin-room-chip">BEDROOM</div>
+        <div class="hunt-field-row" style="margin-top:10px;"><span class="hunt-field-label">Location in the cabin:</span><span class="fill" contenteditable="true" spellcheck="false" data-key="cabin-bed-loc" style="min-width:180px;"></span></div>
+        <div class="hunt-field-row" style="margin-top:8px;"><span class="hunt-field-label">Width:</span><span class="fill" contenteditable="true" spellcheck="false" data-key="cabin-bed-w" style="min-width:60px;"></span><span class="hunt-field-unit">ft</span><span class="hunt-field-label">Depth:</span><span class="fill" contenteditable="true" spellcheck="false" data-key="cabin-bed-d" style="min-width:60px;"></span><span class="hunt-field-unit">ft</span></div>
+        <div class="hunt-field-row" style="margin-top:8px;"><span class="hunt-field-label">Window wall:</span><span class="fill" contenteditable="true" spellcheck="false" data-key="cabin-bed-win" style="min-width:120px;"></span></div>
+        <textarea class="tt-notes" style="border-top:1px dashed var(--hair);padding-top:8px;margin-top:10px;" placeholder="Notes about the bedroom layout..." data-key="cabin-bed-notes" spellcheck="false"></textarea>
+      </div>
+
+      <div class="cabin-room-card">
+        <div class="cabin-room-chip">BATHROOM</div>
+        <div class="hunt-field-row" style="margin-top:10px;"><span class="hunt-field-label">Location in the cabin:</span><span class="fill" contenteditable="true" spellcheck="false" data-key="cabin-bath-loc" style="min-width:180px;"></span></div>
+        <div class="hunt-field-row" style="margin-top:8px;"><span class="hunt-field-label">Width:</span><span class="fill" contenteditable="true" spellcheck="false" data-key="cabin-bath-w" style="min-width:60px;"></span><span class="hunt-field-unit">ft</span><span class="hunt-field-label">Depth:</span><span class="fill" contenteditable="true" spellcheck="false" data-key="cabin-bath-d" style="min-width:60px;"></span><span class="hunt-field-unit">ft</span></div>
+        <p class="cabin-corner-hint" style="margin-top:8px;">Minimum 40 sq ft. Should share a wall with the bedroom to keep plumbing simple.</p>
+        <textarea class="tt-notes" style="border-top:1px dashed var(--hair);padding-top:8px;margin-top:10px;" placeholder="Notes about the bathroom layout..." data-key="cabin-bath-notes" spellcheck="false"></textarea>
+      </div>
+
+      <div class="cabin-room-card">
+        <div class="cabin-room-chip">KITCHEN / LIVING</div>
+        <div class="hunt-field-row" style="margin-top:10px;"><span class="hunt-field-label">Location in the cabin:</span><span class="fill" contenteditable="true" spellcheck="false" data-key="cabin-kl-loc" style="min-width:180px;"></span></div>
+        <div class="hunt-field-row" style="margin-top:8px;"><span class="hunt-field-label">Approx. size:</span><span class="fill" contenteditable="true" spellcheck="false" data-key="cabin-kl-size" style="min-width:60px;"></span><span class="hunt-field-unit">sq ft</span></div>
+        <p class="cabin-corner-hint" style="margin-top:8px;">Open plan (kitchen and living in one space) makes a small cabin feel much bigger.</p>
+        <textarea class="tt-notes" style="border-top:1px dashed var(--hair);padding-top:8px;margin-top:10px;" placeholder="Notes about the living and kitchen layout..." data-key="cabin-kl-notes" spellcheck="false"></textarea>
+      </div>
+
+      <div class="cabin-room-card">
+        <div class="cabin-room-chip">ENTRY / PORCH</div>
+        <div class="hunt-field-row" style="margin-top:10px;"><span class="hunt-field-label">Front door faces:</span><span class="fill" contenteditable="true" spellcheck="false" data-key="cabin-entry-dir" style="min-width:120px;"></span></div>
+        <div class="hunt-field-row" style="margin-top:8px;"><span class="hunt-field-label">Porch depth:</span><span class="fill" contenteditable="true" spellcheck="false" data-key="cabin-porch-d" style="min-width:60px;"></span><span class="hunt-field-unit">ft</span></div>
+        <textarea class="tt-notes" style="border-top:1px dashed var(--hair);padding-top:8px;margin-top:10px;" placeholder="Notes about the entry and porch..." data-key="cabin-entry-notes" spellcheck="false"></textarea>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 MINECRAFT BUILD -->
+  <section>
+    <p class="label"><span class="num">04</span> Build it in Minecraft</p>
+    <h2>First build: Creative mode</h2>
+    <p class="lede">Build your cabin at full scale in Minecraft first &mdash; 1 block = 1 foot. This is the fastest way to test your floor plan before committing to Revit. Check off each step as you complete it.</p>
+    <div class="tt-setup" id="mc-steps">
+      <!-- injected by JS -->
+    </div>
+    <div style="margin-top:16px;">
+      <div class="logcard">
+        <h4>Minecraft build notes</h4>
+        <textarea class="logtext" placeholder="What did you discover when you built it? Did any rooms feel too small? Did you change anything from your floor plan?" data-key="cabin-mc-notes" spellcheck="false"></textarea>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 REVIT -->
+  <section>
+    <p class="label"><span class="num">05</span> Draft it in Revit</p>
+    <h2>Professional drawings</h2>
+    <p class="lede">Revit is the software real architects use every day. It&rsquo;s harder than Minecraft &mdash; but the floor plan you produce will look like a professional drawing. Check off each step.</p>
+    <div class="tt-setup" id="revit-steps">
+      <!-- injected by JS -->
+    </div>
+    <div style="margin-top:16px;">
+      <div class="logcard">
+        <h4>Revit notes</h4>
+        <textarea class="logtext" placeholder="What was tricky? What did you figure out? What does your finished floor plan show?" data-key="cabin-revit-notes" spellcheck="false"></textarea>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<script>
+(function(){
+
+var MC_STEPS = [
+  {check:"mc-0", label:"Open Minecraft and start a new Creative mode world",       detail:"In the world settings, set game mode to Creative so you have unlimited blocks and can fly to see your build from above."},
+  {check:"mc-1", label:"Find a flat area and mark your starting corner",            detail:"Place a distinctive block (like a Gold Block or Glowstone) to mark Corner 1. This is your reference point."},
+  {check:"mc-2", label:"Lay out the footprint on the ground",                       detail:"From Corner 1, place blocks along the ground to outline the exterior walls. Count out the correct number of blocks for your width and depth. Your cabin outline should form a complete rectangle."},
+  {check:"mc-3", label:"Build the exterior walls 4 blocks high",                    detail:"Stack blocks 4 high along the entire perimeter. Leave gaps for a front door (2 blocks wide, 3 blocks tall) and windows (2 wide, 1 or 2 tall). Use a consistent wall material: wood planks, stone bricks, or whatever fits a cabin."},
+  {check:"mc-4", label:"Add a roof",                                                detail:"Use stair blocks and slab blocks to build a sloped roof, or build flat with slabs for a modern look. The roof should overhang the walls by at least 1 block on each side."},
+  {check:"mc-5", label:"Build interior walls",                                      detail:"Divide the inside into your rooms using the same wall material or a different one. Use your floor plan layout. Leave a gap for bedroom and bathroom doors."},
+  {check:"mc-6", label:"Place doors and windows",                                   detail:"Use Door items for the front door and bedroom/bathroom doors. Use Glass Pane blocks for windows in the exterior walls."},
+  {check:"mc-7", label:"Furnish each room",                                         detail:"Bedroom: bed, chest, trapdoor for a window shelf. Bathroom: cauldron (tub), trapdoor (toilet lid), slabs (sink counter). Kitchen: crafting table, furnace, chest. Living area: stairs for chairs, fence posts and pressure plates for a table."},
+  {check:"mc-8", label:"Take a screenshot from above",                              detail:"Press F5 to switch to third-person view, or fly up high (double-tap Spacebar) to look straight down. Press F2 (Java Edition) to take a screenshot. Share it at the showcase!"},
+];
+
+var REVIT_STEPS = [
+  {check:"rv-0", label:"Open Revit and create a new project",                       detail:"Click New on the start screen. Choose the Architectural Template. Click OK. Revit will open with a project browser on the left and a blank floor plan view."},
+  {check:"rv-1", label:"Open the Level 1 floor plan",                               detail:"In the Project Browser panel on the left, expand Floor Plans and double-click Level 1. This is where you will draw your cabin."},
+  {check:"rv-2", label:"Draw the exterior walls",                                   detail:"Click the Wall tool in the Architecture ribbon tab at the top. In the options bar, set the wall type to Generic - 6 inch and height to 9 ft. Click to draw each of the 4 exterior walls. Type the exact length in feet as you draw (for example, type 32 then press Enter to set a 32-foot wall)."},
+  {check:"rv-3", label:"Draw the interior walls",                                   detail:"Still using the Wall tool, draw interior walls to create the bedroom and bathroom. Use Generic - 4 inch for interior walls. The bedroom wall separates the private area from the living space. The bathroom shares at least one wall with the bedroom."},
+  {check:"rv-4", label:"Place the front door and interior doors",                   detail:"Click the Door tool in the Architecture tab. Click on an exterior wall to place the front door. Revit will automatically cut an opening. Place interior doors in the bedroom and bathroom walls the same way."},
+  {check:"rv-5", label:"Place windows",                                             detail:"Click the Window tool in the Architecture tab. Click on exterior walls to place windows. Add at least one window in the bedroom and two or more in the living area."},
+  {check:"rv-6", label:"Label the rooms",                                           detail:"Click the Room tool in the Architecture tab. Click inside each room to place a room tag. Double-click the tag to rename it: Bedroom, Bathroom, Kitchen, Living, Entry."},
+  {check:"rv-7", label:"Export your floor plan as a PDF",                           detail:"Go to File at the top-left. Choose Export, then PDF. Make sure the view selected is your Level 1 Floor Plan. Click Export. Save it somewhere you can print or share it at the showcase."},
+];
+
+function el(tag, cls, text){
+  var e = document.createElement(tag);
+  if(cls) e.className = cls;
+  if(text != null) e.textContent = text;
+  return e;
+}
+
+function buildStepList(containerId, steps){
+  var wrap = document.getElementById(containerId);
+  steps.forEach(function(s){
+    var lbl = el("label","tt-step");
+    var chk = el("span","tt-chkbox");
+    chk.dataset.key = s.check;
+    var body = el("span","tt-step-body");
+    body.appendChild(el("b",null,s.label));
+    body.appendChild(el("span",null,s.detail));
+    lbl.appendChild(chk);
+    lbl.appendChild(body);
+    wrap.appendChild(lbl);
+  });
+}
+
+function save(){
+  var d = {};
+  document.querySelectorAll("[data-key]").forEach(function(node){
+    var k = node.dataset.key;
+    if(node.classList.contains("tt-chkbox")){
+      d[k] = node.classList.contains("checked");
+    } else if(node.tagName === "TEXTAREA"){
+      d[k] = node.value;
+    } else if(node.getAttribute("contenteditable")){
+      d[k] = node.textContent;
+    }
+  });
+  try{ localStorage.setItem("cabin-v1", JSON.stringify(d)); }catch(e){}
+}
+
+function load(){
+  var raw; try{ raw = localStorage.getItem("cabin-v1"); }catch(e){}
+  if(!raw) return;
+  var d = JSON.parse(raw);
+  document.querySelectorAll("[data-key]").forEach(function(node){
+    var k = node.dataset.key;
+    if(d[k] === undefined) return;
+    if(node.classList.contains("tt-chkbox")){
+      if(d[k]) node.classList.add("checked");
+    } else if(node.tagName === "TEXTAREA"){
+      node.value = d[k];
+    } else if(node.getAttribute("contenteditable")){
+      node.textContent = d[k];
+    }
+  });
+}
+
+function wireEvents(){
+  document.querySelectorAll(".tt-chkbox").forEach(function(box){
+    box.addEventListener("click", function(){ box.classList.toggle("checked"); save(); });
+  });
+  document.querySelectorAll("textarea[data-key]").forEach(function(ta){
+    ta.addEventListener("input", save);
+  });
+  document.querySelectorAll("[contenteditable][data-key]").forEach(function(ce){
+    ce.addEventListener("input", save);
+  });
+}
+
+buildStepList("mc-steps", MC_STEPS);
+buildStepList("revit-steps", REVIT_STEPS);
+load();
+wireEvents();
+
+})();
+</script>
+</body>
+</html>

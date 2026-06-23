@@ -204,6 +204,115 @@ td[contenteditable]:focus{background:#F7F6EE;box-shadow:inset 0 0 0 2px var(--am
 .logcard .logtext{width:100%;min-height:84px;border:none;outline:none;resize:none;background:transparent;font-family:var(--body);font-size:14px;color:var(--text);line-height:1.9;padding:0;display:block;}
 .logcard .logtext::placeholder{color:var(--hair);}
 
+/* ===========================================================
+   Tech Toast page (techtoast.html)
+   =========================================================== */
+
+/* progress */
+.tt-progress-wrap{background:var(--card);border:1px solid var(--hair);border-radius:13px;padding:24px 26px;display:flex;flex-direction:column;gap:16px;}
+.tt-progress-info{display:flex;align-items:baseline;gap:10px;}
+.tt-progress-big{font-family:var(--display);font-size:clamp(36px,6vw,64px);font-weight:700;color:var(--ink);line-height:1;}
+.tt-progress-of{font-family:var(--mono);font-size:13px;color:var(--ink-soft);}
+.tt-bar-bg{height:10px;background:var(--grid);border-radius:99px;overflow:hidden;}
+.tt-bar-fill{height:100%;background:var(--amber);border-radius:99px;width:0;transition:width .4s ease;}
+.tt-bulbs{display:flex;flex-wrap:wrap;gap:7px;}
+.tt-dot{width:18px;height:18px;border-radius:50%;background:var(--grid);border:2px solid var(--hair);transition:background .2s,border-color .2s;}
+.tt-dot--done{background:var(--amber);border-color:#E8A820;}
+
+/* setup checklist */
+.tt-setup{display:flex;flex-direction:column;gap:10px;margin-top:6px;}
+.tt-step{display:flex;align-items:flex-start;gap:14px;background:var(--card);border:1px solid var(--hair);border-radius:11px;padding:15px 16px;cursor:pointer;}
+.tt-step:has(.tt-chkbox.checked){border-color:#BBD8C9;background:#F4FAF7;}
+.tt-step-body{display:flex;flex-direction:column;gap:3px;}
+.tt-step-body b{font-family:var(--display);font-size:15px;color:var(--ink);}
+.tt-step-body span{font-size:13.5px;color:var(--ink-soft);line-height:1.5;}
+code{font-family:var(--mono);font-size:12px;background:#E8EBE6;border-radius:4px;padding:1px 5px;color:var(--ink);}
+
+/* checkbox */
+.tt-chkbox{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:7px;border:2px solid var(--ink-soft);cursor:pointer;flex:none;transition:background .12s,border-color .12s;position:relative;}
+.tt-chkbox.checked{background:var(--amber);border-color:var(--amber);}
+.tt-chkbox.checked::after{content:"✓";color:#fff;font-size:13px;line-height:1;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);}
+.tt-chkbox--sm{width:18px;height:18px;border-radius:5px;}
+.tt-chkbox--sm.checked::after{font-size:10px;}
+
+/* week grid */
+.tt-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;margin-top:4px;}
+.tt-card{background:var(--card);border:1px solid var(--hair);border-radius:12px;padding:16px 17px;display:flex;flex-direction:column;gap:8px;}
+.tt-card--final{background:var(--ink);border-color:var(--ink);}
+.tt-card-top{display:flex;align-items:center;gap:8px;}
+.tt-badge{font-family:var(--mono);font-size:11px;font-weight:600;color:var(--amber);letter-spacing:.07em;}
+.tt-card--final .tt-badge{color:var(--amber);}
+.tt-chip{font-family:var(--mono);font-size:10.5px;font-weight:600;color:#fff;background:var(--ink-soft);border-radius:5px;padding:2px 7px;letter-spacing:.04em;}
+.tt-chip--final{background:var(--amber);color:var(--ink);}
+.tt-title{font-family:var(--display);font-size:16px;color:var(--ink);margin:0;line-height:1.1;}
+.tt-card--final .tt-title{color:#fff;}
+.tt-desc{font-size:13px;color:var(--ink-soft);margin:0;line-height:1.45;}
+.tt-card--final .tt-desc{color:#AFC2CE;}
+.tt-checks{display:flex;flex-wrap:wrap;gap:8px;margin-top:2px;}
+.tt-chk-wrap{display:flex;align-items:center;gap:5px;cursor:pointer;}
+.tt-chk-label{font-family:var(--mono);font-size:11px;color:var(--ink-soft);}
+.tt-card--final .tt-chk-label{color:#8FA6B4;}
+.tt-notes{width:100%;min-height:58px;border:none;border-top:1px dashed var(--hair);outline:none;resize:none;background:transparent;font-family:var(--body);font-size:12.5px;color:var(--text);line-height:1.7;padding:8px 0 0;display:block;}
+.tt-card--final .tt-notes{border-top-color:#2E4A60;color:#AFC2CE;}
+.tt-notes::placeholder{color:var(--hair);}
+.tt-card--final .tt-notes::placeholder{color:#2E4A60;}
+
+/* legend */
+.tt-legend{display:flex;flex-wrap:wrap;gap:14px;font-family:var(--mono);font-size:12px;color:var(--ink-soft);margin-bottom:14px;align-items:center;}
+.tt-legend span{display:flex;align-items:center;gap:5px;}
+
+/* ===========================================================
+   Documentary page (documentary.html)
+   =========================================================== */
+.doc-beats{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;margin-top:4px;}
+.doc-beat{background:var(--card);border:1px solid var(--hair);border-radius:12px;padding:16px 17px;display:flex;flex-direction:column;gap:8px;}
+.doc-beat-time{font-family:var(--display);font-size:28px;font-weight:700;color:var(--amber);line-height:1;}
+.doc-beat-label{font-family:var(--display);font-size:15px;font-weight:600;color:var(--ink);margin-top:-2px;}
+.doc-beat-desc{font-size:13px;color:var(--ink-soft);margin:0;line-height:1.45;flex:1;}
+.doc-beat-ta{width:100%;min-height:72px;border:1px dashed var(--hair);border-radius:7px;outline:none;resize:none;background:transparent;font-family:var(--body);font-size:13px;color:var(--text);line-height:1.7;padding:8px 10px;margin-top:auto;}
+.doc-beat-ta::placeholder{color:var(--hair);}
+.doc-tip{font-size:12px;color:var(--ink-soft);margin:0;border-top:1px dashed var(--hair);padding-top:8px;}
+.doc-tip b{color:var(--green);}
+
+/* ===========================================================
+   Treasure Hunt page (treasurehunt.html)
+   =========================================================== */
+.hunt-bearing-ref{display:flex;flex-wrap:wrap;gap:10px 20px;font-family:var(--mono);font-size:12px;color:var(--ink-soft);background:var(--card);border:1px solid var(--hair);border-radius:10px;padding:12px 16px;margin-top:16px;}
+.hunt-bearing-ref b{color:var(--ink);}
+.hunt-waypoints{display:flex;flex-direction:column;gap:12px;margin-bottom:18px;}
+.hunt-waypoint{background:var(--card);border:1px solid var(--hair);border-radius:12px;padding:16px 18px;}
+.hunt-wp-header{display:flex;align-items:center;gap:12px;margin-bottom:12px;}
+.hunt-wp-num{font-family:var(--display);font-size:28px;font-weight:700;color:var(--amber);line-height:1;min-width:36px;}
+.hunt-wp-title{font-family:var(--display);font-size:16px;font-weight:600;color:var(--ink);}
+.hunt-wp-fields{display:flex;flex-direction:column;gap:8px;}
+.hunt-field-row{display:flex;align-items:baseline;flex-wrap:wrap;gap:6px;}
+.hunt-field-label{font-family:var(--mono);font-size:12px;color:var(--ink-soft);}
+.hunt-field-unit{font-family:var(--mono);font-size:11px;color:var(--ink-soft);}
+.hunt-endpoint{background:var(--card);border:1px solid var(--hair);border-radius:12px;padding:16px 18px;margin-top:4px;}
+.hunt-endpoint h3{font-family:var(--display);font-size:17px;color:var(--ink);margin:0 0 12px;}
+.hunt-scoring{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-top:4px;}
+.hunt-score-card{background:var(--card);border:1px solid var(--hair);border-radius:12px;padding:16px 18px;}
+.hunt-score-card.hunt-score-winner{background:var(--ink);border-color:var(--ink);}
+.hunt-score-winner .hunt-score-label{color:var(--amber);}
+.hunt-score-winner .hunt-field-label{color:#8FA6B4;}
+.hunt-score-winner .fill{border-bottom-color:#3D5A72;color:#F1F0E8;}
+.hunt-score-label{font-family:var(--mono);font-size:12px;font-weight:600;color:var(--amber);letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px;}
+
+/* ===========================================================
+   Cabin page (cabin.html)
+   =========================================================== */
+.cabin-setup-note{background:var(--amber-soft);border:1px solid #E8A820;border-radius:10px;padding:13px 16px;font-size:13.5px;color:var(--ink);}
+.cabin-setup-note b{color:var(--rust);}
+.cabin-corners{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;margin-top:4px;}
+.cabin-corner{background:var(--card);border:1px solid var(--hair);border-radius:12px;padding:16px 17px;display:flex;flex-direction:column;gap:8px;}
+.cabin-corner-num{font-family:var(--display);font-size:28px;font-weight:700;color:var(--amber);line-height:1;}
+.cabin-corner-label{font-family:var(--display);font-size:15px;font-weight:600;color:var(--ink);margin-top:-4px;}
+.cabin-corner-desc{font-size:13px;color:var(--ink-soft);margin:0;line-height:1.45;}
+.cabin-corner-hint{font-size:12px;color:var(--ink-soft);margin:4px 0 0;font-style:italic;}
+.cabin-floorplan{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;margin-top:4px;}
+.cabin-room-card{background:var(--card);border:1px solid var(--hair);border-radius:12px;padding:16px 17px;}
+.cabin-room-chip{font-family:var(--mono);font-size:10.5px;font-weight:600;color:#fff;background:var(--ink-soft);border-radius:5px;padding:2px 8px;display:inline-block;}
+
 @media (max-width:620px){
   .reward .inner{grid-template-columns:1fr;}
   .stop{grid-template-columns:64px 1fr;gap:10px;}
