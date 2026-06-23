@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maker Summer &mdash; Boden</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="inner">
+    <a class="brand" href="index.html"><span class="spark">&#9889;</span> Maker Summer</a>
+    <div class="links">
+      <a href="index.html">The Plan</a>
+      <a href="tracker.html">Tracker</a>
+      <a href="techtoast.html">Tech Toast</a>
+      <a href="documentary.html">Documentary</a>
+      <a href="treasurehunt.html">Treasure Hunt</a>
+      <a href="cabin.html">Cabin</a>
+      <a href="boden.html" class="active">Boden</a>
+      <a href="keely.html">Keely</a>
+    </div>
+  </div>
+</nav>
+
+<div class="sheet">
+
+  <header class="head">
+    <p class="eyebrow">Explorer &middot; Maker Summer</p>
+    <h1>Boden
+      <span class="sub">My personal record of the things I built, broke, and figured out this summer.</span>
+    </h1>
+    <div class="namebar">
+      <span><b>Summer started:</b> <span class="fill" contenteditable="true" spellcheck="false" data-key="b-start"></span></span>
+      <span><b>My workshop partner:</b> <span class="fill" contenteditable="true" spellcheck="false" data-key="b-partner"></span></span>
+    </div>
+  </header>
+
+  <!-- 01 GOALS -->
+  <section>
+    <p class="label"><span class="num">01</span> My summer goals</p>
+    <h2>What I want to build and learn</h2>
+    <p class="lede">Fill these in at the start of summer. Read them back at the showcase.</p>
+    <div class="logbook">
+      <div class="logcard">
+        <h4>By the end of summer I want to be able to&hellip;</h4>
+        <textarea class="logtext" placeholder="Write here..." data-key="b-goal-0" spellcheck="false"></textarea>
+      </div>
+      <div class="logcard">
+        <h4>Something I have never done before that I want to try&hellip;</h4>
+        <textarea class="logtext" placeholder="Write here..." data-key="b-goal-1" spellcheck="false"></textarea>
+      </div>
+      <div class="logcard">
+        <h4>The project I am most excited about&hellip;</h4>
+        <textarea class="logtext" placeholder="Write here..." data-key="b-goal-2" spellcheck="false"></textarea>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 MILESTONES -->
+  <section>
+    <p class="label"><span class="num">02</span> Project milestones</p>
+    <h2>Big moments to check off</h2>
+    <p class="lede">These are the key wins across every project. Check them off as you hit them &mdash; not before.</p>
+    <div class="kid-milestones" id="b-milestones">
+      <!-- injected by JS -->
+    </div>
+  </section>
+
+  <!-- 03 WEEKLY WINS -->
+  <section>
+    <p class="label"><span class="num">03</span> Weekly wins</p>
+    <h2>One thing I made or learned each week</h2>
+    <p class="lede">One sentence per week. You can fill these in as you go or look back at the end of summer.</p>
+    <div class="kid-wins" id="b-wins">
+      <!-- injected by JS -->
+    </div>
+  </section>
+
+  <!-- 04 JOURNAL -->
+  <section>
+    <p class="label"><span class="num">04</span> My notes</p>
+    <h2>Field journal</h2>
+    <div class="logbook">
+      <div class="logcard">
+        <h4>Best moment of the summer so far</h4>
+        <textarea class="logtext" placeholder="Write here..." data-key="b-journal-0" spellcheck="false"></textarea>
+      </div>
+      <div class="logcard">
+        <h4>Hardest thing I figured out</h4>
+        <textarea class="logtext" placeholder="Write here..." data-key="b-journal-1" spellcheck="false"></textarea>
+      </div>
+      <div class="logcard">
+        <h4>What I want to build next (after this summer)</h4>
+        <textarea class="logtext" placeholder="Write here..." data-key="b-journal-2" spellcheck="false"></textarea>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<script>
+(function(){
+
+var PREFIX = "b-";
+
+var MILESTONES = [
+  { group:"Tech Toast",   items:[
+    "Complete the one-time setup and upload the first Blink test",
+    "Finish Week 1: button turns on an LED",
+    "Finish Week 5: project reacts to light levels",
+    "Finish Week 10: water level sensor working",
+    "Reach the musical lights goal",
+  ]},
+  { group:"Documentary",  items:[
+    "Pick a subject and write out the full story plan",
+    "Film all six shot types (wide, medium, close-up, action, still, unusual angle)",
+    "Finish the full edit in DaVinci Resolve",
+    "Screen it at the showcase",
+  ]},
+  { group:"Treasure Hunt", items:[
+    "Complete a hunt someone else made",
+    "Build my own 5-waypoint hunt",
+    "Dad follows my hunt",
+  ]},
+  { group:"Cabin",        items:[
+    "Mark all four corners on the actual lot with a compass",
+    "Build the complete cabin in Minecraft",
+    "Produce a floor plan drawing in Revit",
+  ]},
+];
+
+function el(tag, cls, text){
+  var e = document.createElement(tag);
+  if(cls) e.className = cls;
+  if(text != null) e.textContent = text;
+  return e;
+}
+
+function buildMilestones(){
+  var wrap = document.getElementById("b-milestones");
+  MILESTONES.forEach(function(group, gi){
+    var section = el("div","kid-milestone-group");
+    section.appendChild(el("div","kid-milestone-group-label",group.group));
+    group.items.forEach(function(item, ii){
+      var key = PREFIX + "ms-" + gi + "-" + ii;
+      var row = el("label","tt-step");
+      var chk = el("span","tt-chkbox");
+      chk.dataset.key = key;
+      var body = el("span","tt-step-body");
+      body.appendChild(el("b",null,item));
+      row.appendChild(chk);
+      row.appendChild(body);
+      section.appendChild(row);
+    });
+    wrap.appendChild(section);
+  });
+}
+
+function buildWins(){
+  var wrap = document.getElementById("b-wins");
+  for(var w = 1; w <= 10; w++){
+    var card = el("div","logcard");
+    card.appendChild(el("h4",null,"Week " + w));
+    var ta = document.createElement("textarea");
+    ta.className = "logtext";
+    ta.placeholder = "What did you make or figure out this week?";
+    ta.spellcheck = false;
+    ta.dataset.key = PREFIX + "win-" + w;
+    ta.style.minHeight = "52px";
+    card.appendChild(ta);
+    wrap.appendChild(card);
+  }
+}
+
+function save(){
+  var d = {};
+  document.querySelectorAll("[data-key]").forEach(function(node){
+    var k = node.dataset.key;
+    if(node.classList.contains("tt-chkbox")){ d[k] = node.classList.contains("checked"); }
+    else if(node.tagName === "TEXTAREA"){ d[k] = node.value; }
+    else if(node.getAttribute("contenteditable")){ d[k] = node.textContent; }
+  });
+  try{ localStorage.setItem("boden-v1", JSON.stringify(d)); }catch(e){}
+}
+
+function load(){
+  var raw; try{ raw = localStorage.getItem("boden-v1"); }catch(e){}
+  if(!raw) return;
+  var d = JSON.parse(raw);
+  document.querySelectorAll("[data-key]").forEach(function(node){
+    var k = node.dataset.key;
+    if(d[k] === undefined) return;
+    if(node.classList.contains("tt-chkbox")){ if(d[k]) node.classList.add("checked"); }
+    else if(node.tagName === "TEXTAREA"){ node.value = d[k]; }
+    else if(node.getAttribute("contenteditable")){ node.textContent = d[k]; }
+  });
+}
+
+function wireEvents(){
+  document.querySelectorAll(".tt-chkbox").forEach(function(box){
+    box.addEventListener("click", function(){ box.classList.toggle("checked"); save(); });
+  });
+  document.querySelectorAll("textarea[data-key]").forEach(function(ta){ ta.addEventListener("input", save); });
+  document.querySelectorAll("[contenteditable][data-key]").forEach(function(ce){ ce.addEventListener("input", save); });
+}
+
+buildMilestones();
+buildWins();
+load();
+wireEvents();
+
+})();
+</script>
+</body>
+</html>

@@ -313,6 +313,14 @@ code{font-family:var(--mono);font-size:12px;background:#E8EBE6;border-radius:4px
 .cabin-room-card{background:var(--card);border:1px solid var(--hair);border-radius:12px;padding:16px 17px;}
 .cabin-room-chip{font-family:var(--mono);font-size:10.5px;font-weight:600;color:#fff;background:var(--ink-soft);border-radius:5px;padding:2px 8px;display:inline-block;}
 
+/* ===========================================================
+   Kid personal pages (boden.html, keely.html)
+   =========================================================== */
+.kid-milestones{display:flex;flex-direction:column;gap:14px;}
+.kid-milestone-group{background:var(--card);border:1px solid var(--hair);border-radius:12px;padding:16px 18px;display:flex;flex-direction:column;gap:8px;}
+.kid-milestone-group-label{font-family:var(--mono);font-size:11px;font-weight:600;color:var(--amber);letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px;}
+.kid-wins{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;}
+
 @media (max-width:620px){
   .reward .inner{grid-template-columns:1fr;}
   .stop{grid-template-columns:64px 1fr;gap:10px;}
