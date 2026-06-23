@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Maker Summer — Tech Toast</title>
+<title>Maker Summer — Tech Toast &mdash; Boden</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -14,28 +14,30 @@
 <nav class="topnav">
   <div class="inner">
     <a class="brand" href="index.html"><span class="spark">&#9889;</span> Maker Summer</a>
-    <div class="links">
-      <a href="index.html">The Plan</a>
+    <div class="links">      <a href="index.html">The Plan</a>
       <a href="tracker.html">Tracker</a>
-      <a href="techtoast.html" class="active">Tech Toast</a>
-      <a href="documentary.html">Documentary</a>
-      <a href="treasurehunt.html">Treasure Hunt</a>
-      <a href="cabin.html">Cabin</a>
-      <a href="boden.html">Boden</a>
-      <a href="keely.html">Keely</a>
-    </div>
+      <span class="nav-kid">Boden</span>
+      <a href="techtoast-boden.html" class="active">Tech Toast</a>
+      <a href="documentary-boden.html">Documentary</a>
+      <a href="treasurehunt-boden.html">Treasure Hunt</a>
+      <a href="cabin-boden.html">Cabin</a>
+      <span class="nav-kid">Keely</span>
+      <a href="techtoast-keely.html">Tech Toast</a>
+      <a href="documentary-keely.html">Documentary</a>
+      <a href="treasurehunt-keely.html">Treasure Hunt</a>
+      <a href="cabin-keely.html">Cabin</a>    </div>
   </div>
 </nav>
 
 <div class="sheet">
 
   <header class="head">
-    <p class="eyebrow">Arduino Course &middot; 25 Weeks &middot; Tech Toast Academy</p>
+    <p class="eyebrow">Boden &middot; Arduino Course &middot; 25 Weeks &middot; Tech Toast Academy</p>
     <h1>Tech Toast
       <span class="sub">Build real electronic projects, week by week &mdash; from your first button and LED all the way to an RFID door lock.</span>
     </h1>
     <div class="namebar">
-      <span><b>Builder:</b> <span class="fill" contenteditable="true" spellcheck="false" data-key="tt-name"></span></span>
+      <span><b>Builder:</b> Boden</span>
       <span><b>Started:</b> <span class="fill" contenteditable="true" spellcheck="false" data-key="tt-started"></span></span>
     </div>
   </header>
@@ -227,11 +229,11 @@ function save(){
       d[k] = node.textContent;
     }
   });
-  try{ localStorage.setItem('techtoast-v1', JSON.stringify(d)); }catch(e){}
+  try{ localStorage.setItem('techtoast-boden-v1', JSON.stringify(d)); }catch(e){}
 }
 
 function load(){
-  var raw; try{ raw = localStorage.getItem('techtoast-v1'); }catch(e){}
+  var raw; try{ raw = localStorage.getItem('techtoast-boden-v1'); }catch(e){}
   if(!raw) return;
   var d = JSON.parse(raw);
   document.querySelectorAll('[data-key]').forEach(function(node){

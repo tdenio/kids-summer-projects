@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maker Summer &mdash; Treasure Hunt &mdash; Boden</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="inner">
+    <a class="brand" href="index.html"><span class="spark">&#9889;</span> Maker Summer</a>
+    <div class="links">      <a href="index.html">The Plan</a>
+      <a href="tracker.html">Tracker</a>
+      <span class="nav-kid">Boden</span>
+      <a href="techtoast-boden.html">Tech Toast</a>
+      <a href="documentary-boden.html">Documentary</a>
+      <a href="treasurehunt-boden.html" class="active">Treasure Hunt</a>
+      <a href="cabin-boden.html">Cabin</a>
+      <span class="nav-kid">Keely</span>
+      <a href="techtoast-keely.html">Tech Toast</a>
+      <a href="documentary-keely.html">Documentary</a>
+      <a href="treasurehunt-keely.html">Treasure Hunt</a>
+      <a href="cabin-keely.html">Cabin</a>    </div>
+  </div>
+</nav>
+
+<div class="sheet">
+
+  <header class="head">
+    <p class="eyebrow">Boden &middot; Expedition &middot; Compass &middot; 5 Waypoints &middot; One Winner</p>
+    <h1>Treasure Hunt
+      <span class="sub">Follow a 5-step compass route to the endpoint &mdash; then build one yourself and see if Dad can find it.</span>
+    </h1>
+    <div class="namebar">
+      <span><b>Explorer:</b> Boden</span>
+      <span><b>Date:</b> <span class="fill" contenteditable="true" spellcheck="false" data-key="hunt-date"></span></span>
+    </div>
+  </header>
+
+  <!-- 01 HOW TO USE THE COMPASS -->
+  <section>
+    <p class="label"><span class="num">01</span> Using your compass</p>
+    <h2>Read before you hunt</h2>
+    <div class="deal">
+      <div>
+        <h3>Hold it flat</h3>
+        <p>Keep the compass level so the needle can spin freely. Tilt it and the needle drags on the case.</p>
+      </div>
+      <div>
+        <h3>Wait for the needle</h3>
+        <p>The red end always points North. Wait for it to stop swinging before you read your bearing.</p>
+      </div>
+      <div>
+        <h3>Walk a bearing</h3>
+        <p>Turn your whole body until the bearing number you need lines up with the direction-of-travel arrow. Then walk. Check every 10&ndash;15 steps.</p>
+      </div>
+      <div>
+        <h3>Count your steps</h3>
+        <p>One normal walking step &asymp; 2&frac12; feet. So 4 steps &asymp; 10 feet, 20 steps &asymp; 50 feet. Try to keep a steady stride.</p>
+      </div>
+    </div>
+    <div class="hunt-bearing-ref">
+      <span><b>N</b> = 0&deg;</span>
+      <span><b>NE</b> = 45&deg;</span>
+      <span><b>E</b> = 90&deg;</span>
+      <span><b>SE</b> = 135&deg;</span>
+      <span><b>S</b> = 180&deg;</span>
+      <span><b>SW</b> = 225&deg;</span>
+      <span><b>W</b> = 270&deg;</span>
+      <span><b>NW</b> = 315&deg;</span>
+    </div>
+  </section>
+
+  <!-- 02 FOLLOW A HUNT -->
+  <section>
+    <p class="label"><span class="num">02</span> Go on the hunt</p>
+    <h2>Follow the clues</h2>
+    <p class="lede">Someone else sets the waypoints &mdash; you follow them. Fill in the bearing and steps you&rsquo;re given at each waypoint, then write what you found when you got there.</p>
+
+    <div class="hunt-waypoints" id="follow-waypoints">
+      <!-- injected by JS -->
+    </div>
+
+    <div class="hunt-endpoint">
+      <h3>Where I ended up</h3>
+      <textarea class="logtext" style="min-height:64px;" placeholder="Describe where you are standing when you run out of steps on Waypoint 5..." data-key="follow-endpoint" spellcheck="false"></textarea>
+      <div class="hunt-field-row" style="margin-top:12px;">
+        <span class="hunt-field-label">How close I think I was:</span>
+        <span class="fill" contenteditable="true" spellcheck="false" data-key="follow-closeness" style="min-width:180px;"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 CREATE A HUNT -->
+  <section>
+    <p class="label"><span class="num">03</span> Create your own hunt</p>
+    <h2>Build one for Dad to follow</h2>
+    <p class="lede">You design the route. Set 5 waypoints using compass bearings and step counts. Keep the endpoint location secret until after everyone finishes. The person who gets closest to your endpoint wins a prize.</p>
+
+    <div class="hunt-field-row" style="margin-bottom:20px;">
+      <span class="hunt-field-label"><b>Starting point</b> (where all hunters begin):</span>
+      <span class="fill" contenteditable="true" spellcheck="false" data-key="create-start" style="min-width:260px;"></span>
+    </div>
+
+    <div class="hunt-waypoints" id="create-waypoints">
+      <!-- injected by JS -->
+    </div>
+
+    <div class="hunt-endpoint">
+      <h3>The final treasure <span class="tag">keep secret!</span></h3>
+      <div class="hunt-field-row">
+        <span class="hunt-field-label">Actual endpoint location (describe it):</span>
+        <span class="fill" contenteditable="true" spellcheck="false" data-key="create-endpoint-loc" style="min-width:260px;"></span>
+      </div>
+      <div class="hunt-field-row" style="margin-top:10px;">
+        <span class="hunt-field-label">The prize:</span>
+        <span class="fill" contenteditable="true" spellcheck="false" data-key="create-prize" style="min-width:200px;"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 SCORING -->
+  <section>
+    <p class="label"><span class="num">04</span> Scoring &amp; winner</p>
+    <h2>Who got closest?</h2>
+    <p class="lede">After both hunters finish, the hunt creator reveals the true endpoint. Dad measures how far off each hunter landed using pacing or a tape measure.</p>
+    <div class="hunt-scoring">
+
+      <div class="hunt-score-card">
+        <div class="hunt-score-label">Hunter 1</div>
+        <div class="hunt-field-row">
+          <span class="hunt-field-label">Name:</span>
+          <span class="fill" contenteditable="true" spellcheck="false" data-key="score-h1-name" style="min-width:140px;"></span>
+        </div>
+        <div class="hunt-field-row" style="margin-top:8px;">
+          <span class="hunt-field-label">Ended up at:</span>
+          <span class="fill" contenteditable="true" spellcheck="false" data-key="score-h1-loc" style="min-width:200px;"></span>
+        </div>
+        <div class="hunt-field-row" style="margin-top:8px;">
+          <span class="hunt-field-label">Distance off target:</span>
+          <span class="fill" contenteditable="true" spellcheck="false" data-key="score-h1-dist" style="min-width:120px;"></span>
+        </div>
+      </div>
+
+      <div class="hunt-score-card">
+        <div class="hunt-score-label">Hunter 2</div>
+        <div class="hunt-field-row">
+          <span class="hunt-field-label">Name:</span>
+          <span class="fill" contenteditable="true" spellcheck="false" data-key="score-h2-name" style="min-width:140px;"></span>
+        </div>
+        <div class="hunt-field-row" style="margin-top:8px;">
+          <span class="hunt-field-label">Ended up at:</span>
+          <span class="fill" contenteditable="true" spellcheck="false" data-key="score-h2-loc" style="min-width:200px;"></span>
+        </div>
+        <div class="hunt-field-row" style="margin-top:8px;">
+          <span class="hunt-field-label">Distance off target:</span>
+          <span class="fill" contenteditable="true" spellcheck="false" data-key="score-h2-dist" style="min-width:120px;"></span>
+        </div>
+      </div>
+
+      <div class="hunt-score-card hunt-score-winner">
+        <div class="hunt-score-label">Winner</div>
+        <div class="hunt-field-row" style="margin-top:8px;">
+          <span class="hunt-field-label">Closest explorer:</span>
+          <span class="fill" contenteditable="true" spellcheck="false" data-key="score-winner" style="min-width:180px;"></span>
+        </div>
+        <div class="hunt-field-row" style="margin-top:8px;">
+          <span class="hunt-field-label">Their prize:</span>
+          <span class="fill" contenteditable="true" spellcheck="false" data-key="score-prize" style="min-width:200px;"></span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</div>
+
+<script>
+(function(){
+
+function el(tag, cls, text){
+  var e = document.createElement(tag);
+  if(cls) e.className = cls;
+  if(text != null) e.textContent = text;
+  return e;
+}
+
+function makeCEFill(key, minWidth){
+  var span = el("span","fill");
+  span.contentEditable = "true";
+  span.spellcheck = false;
+  span.dataset.key = key;
+  if(minWidth) span.style.minWidth = minWidth;
+  return span;
+}
+
+function makeTextarea(key, placeholder, minHeight){
+  var ta = document.createElement("textarea");
+  ta.className = "logtext";
+  ta.placeholder = placeholder || "";
+  ta.spellcheck = false;
+  ta.dataset.key = key;
+  if(minHeight) ta.style.minHeight = minHeight;
+  return ta;
+}
+
+function buildWaypoints(containerId, prefix, mode){
+  var wrap = document.getElementById(containerId);
+  for(var i = 1; i <= 5; i++){
+    var card = el("div","hunt-waypoint");
+    var hdr = el("div","hunt-wp-header");
+    hdr.appendChild(el("span","hunt-wp-num","0" + i));
+    hdr.appendChild(el("span","hunt-wp-title","Waypoint " + i));
+    card.appendChild(hdr);
+
+    var fields = el("div","hunt-wp-fields");
+
+    var row1 = el("div","hunt-field-row");
+    row1.appendChild(el("span","hunt-field-label","Compass bearing:"));
+    row1.appendChild(makeCEFill(prefix + "-" + i + "-bearing","80px"));
+    row1.appendChild(el("span","hunt-field-unit","deg"));
+    row1.appendChild(el("span","hunt-field-label","Steps:"));
+    row1.appendChild(makeCEFill(prefix + "-" + i + "-steps","70px"));
+    fields.appendChild(row1);
+
+    if(mode === "follow"){
+      var row2 = el("div","hunt-field-row");
+      row2.appendChild(el("span","hunt-field-label","What I found here:"));
+      fields.appendChild(row2);
+      fields.appendChild(makeTextarea(prefix + "-" + i + "-found","Describe what landmark or object was at this waypoint when you arrived...","52px"));
+    } else {
+      var clueRow = el("div","hunt-field-row");
+      clueRow.appendChild(el("span","hunt-field-label","Clue for the hunter (what will they see when they arrive?):"));
+      fields.appendChild(clueRow);
+      fields.appendChild(makeTextarea(prefix + "-" + i + "-clue","Example: look for the big oak tree stump near the fence...","52px"));
+    }
+
+    card.appendChild(fields);
+    wrap.appendChild(card);
+  }
+}
+
+function save(){
+  var d = {};
+  document.querySelectorAll("[data-key]").forEach(function(node){
+    var k = node.dataset.key;
+    if(node.tagName === "TEXTAREA"){
+      d[k] = node.value;
+    } else if(node.getAttribute("contenteditable")){
+      d[k] = node.textContent;
+    }
+  });
+  try{ localStorage.setItem("treasurehunt-boden-v1", JSON.stringify(d)); }catch(e){}
+}
+
+function load(){
+  var raw; try{ raw = localStorage.getItem("treasurehunt-boden-v1"); }catch(e){}
+  if(!raw) return;
+  var d = JSON.parse(raw);
+  document.querySelectorAll("[data-key]").forEach(function(node){
+    var k = node.dataset.key;
+    if(d[k] === undefined) return;
+    if(node.tagName === "TEXTAREA"){
+      node.value = d[k];
+    } else if(node.getAttribute("contenteditable")){
+      node.textContent = d[k];
+    }
+  });
+}
+
+function wireEvents(){
+  document.querySelectorAll("textarea[data-key]").forEach(function(ta){
+    ta.addEventListener("input", save);
+  });
+  document.querySelectorAll("[contenteditable][data-key]").forEach(function(ce){
+    ce.addEventListener("input", save);
+  });
+}
+
+buildWaypoints("follow-waypoints", "follow", "follow");
+buildWaypoints("create-waypoints", "create", "create");
+load();
+wireEvents();
+
+})();
+</script>
+</body>
+</html>

@@ -314,7 +314,16 @@ code{font-family:var(--mono);font-size:12px;background:#E8EBE6;border-radius:4px
 .cabin-room-chip{font-family:var(--mono);font-size:10.5px;font-weight:600;color:#fff;background:var(--ink-soft);border-radius:5px;padding:2px 8px;display:inline-block;}
 
 /* ===========================================================
-   Kid personal pages (boden.html, keely.html)
+   Kid nav group labels
+   =========================================================== */
+.nav-kid{
+  font-family:var(--mono);font-size:11px;font-weight:600;color:var(--amber);
+  letter-spacing:.1em;text-transform:uppercase;padding:6px 4px 6px 12px;
+  border-left:1.5px solid var(--hair);margin-left:4px;
+}
+
+/* ===========================================================
+   Kid personal pages (boden.html, keely.html) — kept for reference
    =========================================================== */
 .kid-milestones{display:flex;flex-direction:column;gap:14px;}
 .kid-milestone-group{background:var(--card);border:1px solid var(--hair);border-radius:12px;padding:16px 18px;display:flex;flex-direction:column;gap:8px;}
